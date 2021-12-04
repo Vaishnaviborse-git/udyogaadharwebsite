@@ -59,4 +59,21 @@ class UpdateRegistrationsController extends Controller
 
         return view('thankyou');
     }
+
+    public function update(Request $request, UpdateReg $updateReg)
+    {
+          // Validation
+          $request->validate([
+            'status' => 'required'
+
+        ]);
+
+        // update
+        $updateReg->update([
+            'status' => $request->get('status')
+
+        ]);
+
+        return redirect()->back();
+    }
 }

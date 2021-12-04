@@ -30,18 +30,27 @@ Route::group(['middleware' => 'auth.admin'], function () {
 
     Route::get('aadharRegs',[AadharRegistrationsController::class,'index'])->name('aadharRegs.index');
     Route::get('aadharRegs/{aadharReg}/show',[AadharRegistrationsController::class,'show'])->name('aadharRegs.show');
+    Route::post('aadharRegs/{aadharReg}',[AadharRegistrationsController::class,'update'])->name('aadharRegs.update');
 
     Route::get('GSTRegs',[GSTRegistrationsController::class,'index'])->name('GSTRegs.index');
     Route::get('GSTRegs/{gstReg}/show',[GSTRegistrationsController::class,'show'])->name('GSTRegs.show');
+    Route::post('GSTRegs/{gstReg}',[GSTRegistrationsController::class,'update'])->name('GSTRegs.update');
+
 
     Route::get('updateRegs',[UpdateRegistrationsController::class,'index'])->name('updateRegs.index');
     Route::get('updateRegs/{updateReg}/show',[UpdateRegistrationsController::class,'show'])->name('updateRegs.show');
+    Route::post('updateRegs/{updateReg}',[UpdateRegistrationsController::class,'update'])->name('updateRegs.update');
+
 
     Route::get('GEMRegs',[GEMRegistrationsController::class,'index'])->name('GEMRegs.index');
     Route::get('GEMRegs/{GEMReg}/show',[GEMRegistrationsController::class,'show'])->name('GEMRegs.show');
+    Route::post('GEMRegs/{GEMReg}',[GEMRegistrationsController::class,'update'])->name('GEMRegs.update');
+
 
     Route::get('printCerts',[PrintCertificatesController::class,'index'])->name('printCerts.index');
     Route::get('printCerts/{printCert}/show',[PrintCertificatesController::class,'show'])->name('printCerts.show');
+    Route::post('printCerts/{printCert}',[PrintCertificatesController::class,'update'])->name('printCerts.update');
+
 
 
 });

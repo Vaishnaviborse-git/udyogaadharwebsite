@@ -10,6 +10,6 @@ class PrintCertificate extends Model
     use HasFactory;
 
     protected $fillable = [
-        'aadhar_no','fname','lname','phone','email','udyam_reg_no'
+        'aadhar_no','fname','lname','phone','email','udyam_reg_no','status'
     ];
 }

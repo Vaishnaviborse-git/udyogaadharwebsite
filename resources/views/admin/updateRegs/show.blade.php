@@ -54,4 +54,38 @@
 
       
 </div>
+
+<form action="{{ route('admin.updateRegs.update',['updateReg' => $updateReg]) }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    <div class="card shadow border-0">
+    
+        <div class="card-body">
+            <div class="row g-5">
+                
+                <div class="col-md-6">
+                    <div class="">
+                        <label class="form-label" for="status">Status</label>
+                        <select class="form-select @error('status') is-invalid @enderror" name="status">
+                            <option >Select Status</option>
+                            <option value="New" @if($updateReg->status == 'New' ) selected @endif >New</option>
+                            <option value="Processing" @if($updateReg->status == 'Processing' ) selected @endif>Processing</option>
+                            <option value="Deliver" @if($updateReg->status == 'Deliver' ) selected @endif>Deliver</option>
+                            <option value="Cancel" @if($updateReg->status == 'Processing' ) selected @endif>Cancel</option>
+                          </select> 
+
+                        @error('status')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="card-footer text-end py-4">
+            <button type="submit" class="btn btn-sm btn-primary">Save</button>
+        </div>
+    </div>
+</form>
 @endsection

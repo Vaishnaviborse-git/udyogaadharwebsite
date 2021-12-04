@@ -11,7 +11,7 @@ class GSTReg extends Model
 
     protected $fillable = [
         'name','phone','email','org_name','about_business','constitution_of_business','pan_card_no','premises_address',
-        'electricity_bill','pan_card'
+        'electricity_bill','pan_card','status'
 
     ];
 }

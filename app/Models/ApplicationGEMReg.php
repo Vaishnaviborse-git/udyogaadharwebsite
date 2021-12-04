@@ -11,7 +11,7 @@ class ApplicationGEMReg extends Model
 
     protected $fillable = [
         'name','phone','email','org_name','type_of_org','business_pan','date_of_start','business_address','IFSC_code',
-        'bank_account_no','bank_name'
+        'bank_account_no','bank_name','status'
 
     ];
 

@@ -62,4 +62,21 @@ class GSTRegistrationsController extends Controller
 
         return view('thankyou');
     }
+
+    public function update(Request $request, GSTReg $GSTRegs)
+    {
+          // Validation
+          $request->validate([
+            'status' => 'required'
+
+        ]);
+
+        // update
+        $GSTRegs->update([
+            'status' => $request->get('status')
+
+        ]);
+
+        return redirect()->back();
+    }
 }

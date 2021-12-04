@@ -11,7 +11,7 @@ class UpdateReg extends Model
 
     protected $fillable = [
         'aadhar_no','fname','lname','phone','email','udyam_reg_no','org_name',
-        'type_of_org','updates','decription'
+        'type_of_org','updates','decription','status'
     ];
 
     

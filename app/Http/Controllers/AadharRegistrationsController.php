@@ -77,4 +77,21 @@ class AadharRegistrationsController extends Controller
         return view('thankyou');
 
     }
+
+    public function update(Request $request, AadharReg $aadharReg)
+    {
+          // Validation
+          $request->validate([
+            'status' => 'required'
+
+        ]);
+
+        // update
+        $aadharReg->update([
+            'status' => $request->get('status')
+
+        ]);
+
+        return redirect()->back();
+    }
 }

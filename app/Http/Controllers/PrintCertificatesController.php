@@ -52,4 +52,21 @@ class PrintCertificatesController extends Controller
 
         return view('thankyou');
     }
+
+    public function update(Request $request, PrintCertificate $printCert)
+    {
+          // Validation
+          $request->validate([
+            'status' => 'required'
+
+        ]);
+
+        // update
+        $printCert->update([
+            'status' => $request->get('status')
+
+        ]);
+
+        return redirect()->back();
+    }
 }

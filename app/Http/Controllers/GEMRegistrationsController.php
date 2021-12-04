@@ -62,4 +62,21 @@ class GEMRegistrationsController extends Controller
 
         return view('thankyou');
     }
+
+    public function update(Request $request, ApplicationGEMReg $GEMReg)
+    {
+          // Validation
+          $request->validate([
+            'status' => 'required'
+
+        ]);
+
+        // update
+        $GEMReg->update([
+            'status' => $request->get('status')
+
+        ]);
+
+        return redirect()->back();
+    }
 }
